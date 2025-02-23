@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", "-apple-system", serif;
+}
+
+.swiper {
+  height: 100vh;
+}
+
+.swiper-slide {
+  height: 100%;
+  /*line-height: 100vh;*/
+  font-size: 30px;
+  /*text-align: center;*/
+  background: linear-gradient(45deg, #E4EFF1, #6ABFBA);
+}
+
+.a {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-fill-mode: backwards;
+}
+
+.b {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+.c {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+
+.d {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+
+.e {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: backwards;
+}
+
+.f {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-fill-mode: backwards;
+}
+
+.g {
+  animation-name: slide-top;
+  animation-duration: 1s;
+  animation-delay: 3.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
+
+.color-a {
+  color: #F593C2;
+}
+
+.color-b {
+  color: #7AC65A;
+}
+
+.color-c {
+  color: #F2A135;
+}
+
+.color-d {
+  color: #6ba4f6;
+}
+
+.color-e {
+  color: #6ABFBA;
+}
+
+.bg1 {
+  background: url('../image/bg1.jpg') no-repeat center/cover;
+}
+
+.bg2 {
+  background: url('../image/bg2.jpg') no-repeat center/cover;
+}
+
+.bg3 {
+  background: url('../image/bg3.jpg') no-repeat center/cover;
+}
+
+.bg4 {
+  background: url('../image/bg4.jpg') no-repeat center/cover;
+}
+
+.bg5 {
+  background: url('../image/bg5.jpg') no-repeat center/cover;
+}
+
+.bg6 {
+  background: url('../image/bg6.jpg') no-repeat center/cover;
+}
+
+.bg7 {
+  background: url('../image/bg7.jpg') no-repeat center/cover;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 100vh;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 72px;
+  font-weight: bold;
+  /*font-family: 'Archicoco';*/
+  z-index: 2; /*盖住动图*/
+}
+
+.title-container h3 {
+  margin: 30px;
+  line-height: 60px;
+}
+
+.tips-title {
+  margin-bottom: -40%;
+  margin-left: -20px;
+  font-size: 20px;
+  color: #b0aeae;
+  font-weight: bold;
+}
+
+#report-image {
+  width: 500px;
+  height: 500px;
+  margin-left: -8%;
+}
+
+#map-image {
+  position: absolute;
+  top: 22%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+}
+
+#plane-image {
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+}
+
+#ticket-image {
+  position: absolute;
+  bottom: 7%;
+  right: 10%;
+  width: 350px;
+  height: 350px;
+}
+
+#foot-image {
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+}
+
+#camera-image {
+  position: absolute;
+  top: 10%;
+  right: 22%;
+  width: 200px;
+  height: 200px;
+}
+
+#photo-image {
+  position: absolute;
+  top: 7%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+}
+
+.right-text-overlay {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  transform: translate(-20%, -10%); /* 居中文字 */
+  color: white;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.right-text-p {
+  font-family: 'SimHei', sans-serif;
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.left-text-overlay {
+  position: absolute;
+  bottom: 15%;
+  left: 12%;
+  transform: translate(-20%, -10%); /* 居中文字 */
+  color: white;
+  font-size: 2rem;
+  text-align: left;
+  z-index: 1; /* 确保文字在视频上方 */
+}
+
+.left-text-p {
+  font-family: 'SimHei', sans-serif;
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.center-text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 居中文字 */
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 1; /* 确保文字在视频上方 */
+}
+
+.center-text-p {
+  font-family: 'SimHei', sans-serif;
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+
