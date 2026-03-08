@@ -53,12 +53,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Cloud } from 'laf-client-sdk'
-
-const cloud = new Cloud({
-  baseUrl: "https://k9yhtp.laf.run",
-  getAccessToken: () => '',
-})
+import getOrderSongsRank from '@/api/getOrderSongsRank'
 
 const orderSongsRank = ref([])
 const orderSongsCnt = ref(0)
@@ -69,7 +64,7 @@ const rank = ref([])
 onMounted(async () => {
   // 获取数据
   const visitedArray = JSON.parse(localStorage.getItem('visitedArray'));
-  orderSongsRank.value = await cloud.invoke('getOrderSongsRank', visitedArray)
+  orderSongsRank.value = await getOrderSongsRank(visitedArray)
   orderSongsCnt.value = orderSongsRank.value.length
   if (orderSongsCnt.value > 0) {
     mostSongsCnt.value = orderSongsRank.value[0][1]

@@ -46,12 +46,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Cloud } from 'laf-client-sdk'
-
-const cloud = new Cloud({
-  baseUrl: "https://k9yhtp.laf.run",
-  getAccessToken: () => '',
-})
+import getAchievements from '@/api/getAchievements'
 
 const achievementsList = ref([])
 const achievementsCnt = ref(0)
@@ -60,7 +55,7 @@ const showAchievementsList = ref([])
 onMounted(async () => {
   // 获取数据
   const visitedArray = JSON.parse(localStorage.getItem('visitedArray'));
-  achievementsList.value = await cloud.invoke('getAchievements', visitedArray)
+  achievementsList.value = await getAchievements(visitedArray)
   achievementsCnt.value = achievementsList.value.length
   getShowAchievementsList()
 })

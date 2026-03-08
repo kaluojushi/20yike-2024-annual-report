@@ -70,13 +70,10 @@
 
 <script setup>
 import { ref, onMounted, defineEmits } from 'vue'
-import { Cloud } from 'laf-client-sdk'
 import {Refresh} from "@element-plus/icons-vue";
-
-const cloud = new Cloud({
-  baseUrl: "https://k9yhtp.laf.run",
-  getAccessToken: () => '',
-})
+import getOrderSongsRank from '@/api/getOrderSongsRank'
+import getAchievements from '@/api/getAchievements'
+import getKeywords from '@/api/getKeywords'
 
 const visitedArray = ref([])
 
@@ -127,7 +124,7 @@ const mostSongsCnt = ref(0)
 const showMostSong = ref('')
 
 async function getOrderRank() {
-  orderSongsRank.value = await cloud.invoke('getOrderSongsRank', visitedArray.value)
+  orderSongsRank.value = await getOrderSongsRank(visitedArray.value)
   orderSongsCnt.value = orderSongsRank.value.length
   if (orderSongsCnt.value > 0) {
     mostSongsCnt.value = orderSongsRank.value[0][1]
@@ -161,7 +158,7 @@ const achievementsList = ref([])
 const showAchievement = ref('')
 
 async function getAchievementsList() {
-  achievementsList.value = await cloud.invoke('getAchievements', visitedArray.value)
+  achievementsList.value = await getAchievements(visitedArray.value)
   if (achievementsList.value.length > 0) {
     showAchievement.value = achievementsList.value[Math.floor(Math.random() * achievementsList.value.length)]
   }
@@ -183,7 +180,7 @@ const keywordsList = ref([])
 const showKeyword = ref('')
 
 async function getKeywordsList() {
-  keywordsList.value = await cloud.invoke('getKeywords', visitedArray.value)
+  keywordsList.value = await getKeywords(visitedArray.value)
   if (keywordsList.value.length > 0) {
     showKeyword.value = keywordsList.value[Math.floor(Math.random() * keywordsList.value.length)]
   }

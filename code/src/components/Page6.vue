@@ -45,12 +45,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Cloud } from 'laf-client-sdk'
-
-const cloud = new Cloud({
-  baseUrl: "https://k9yhtp.laf.run",
-  getAccessToken: () => '',
-})
+import getKeywords from '@/api/getKeywords'
 
 const keywordsList = ref([])
 const keywordsCnt = ref(0)
@@ -59,7 +54,7 @@ const showKeywordsList = ref([])
 onMounted(async () => {
   // 获取数据
   const visitedArray = JSON.parse(localStorage.getItem('visitedArray'));
-  keywordsList.value = await cloud.invoke('getKeywords', visitedArray)
+  keywordsList.value = await getKeywords(visitedArray)
   keywordsCnt.value = keywordsList.value.length
   getShowKeywordsList()
 })
