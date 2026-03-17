@@ -216,15 +216,21 @@ onMounted(() => {
   font-weight: bold;
   color: #171F2C;
   text-shadow: 2px 2px 2px #fff;
+  position: relative;
+  z-index: 10;
 }
 
 .checkbox-card-checkall {
   margin: 20px 20px;
+  position: relative;
+  z-index: 10;
 }
 
 
 .checkbox-card-list {
   margin: 20px 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .el-card {
@@ -262,6 +268,7 @@ onMounted(() => {
   position: absolute;
   bottom: 25%;
   right: 5%;
+  z-index: 10;
 }
 
 .checkbox-footer-text {
@@ -272,7 +279,7 @@ onMounted(() => {
 .checkbox-image {
   position: absolute;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
   max-width: 768px;
   margin: 0 auto;
   filter: opacity(0.5);
