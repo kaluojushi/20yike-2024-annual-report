@@ -2,7 +2,7 @@
 
 我的二十年一刻 2024 观演报告📰
 
-项目主页：<https://20yike-report.sodaguide.io>
+项目主页：<https://2024.sodagreen.me>（<https://20yike-report.sodaguide.io>）
 
 项目源码：<https://github.com/kaluojushi/20yike-2024-annual-report>
 
@@ -18,8 +18,10 @@
 - `code`：项目代码
   - `public`：公共资源，包含网站图标、Vue 入口 HTML
   - `src`：项目源码
+    - `api`：API 函数
     - `assets`：资源文件，包含图片、CSS 等
     - `components`：组件，包含页面组件、单个组件等
+    - `db`：数据文件
     - `App.vue`：Vue 入口
     - `main.js`：JS 入口
 - `image`：项目截图
